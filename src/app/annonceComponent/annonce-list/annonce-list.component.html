@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <h2 class="mb-4 text-center">Liste des annonces</h2>
+
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col" *ngFor="let annonce of annonces">
+      <div class="card h-100 shadow-sm border-primary">
+        <div class="card-body">
+          <h5 class="card-title text-primary">{{ annonce.title }}</h5>
+          <p class="card-text">
+            <strong>Description :</strong> {{ annonce.description }}
+          </p>
+          <p class="card-text">
+            <strong>Adresse :</strong> {{ annonce.adress }}
+          </p>
+          <p class="card-text">
+            <strong>Email :</strong> {{ annonce.mail }}
+          </p>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+          <button class="btn btn-outline-danger btn-sm" (click)="deleteAnnonce(annonce.id)">
+            Supprimer
+          </button>
+          <button class="btn btn-outline-primary btn-sm" (click)="editAnnonce(annonce.id)">
+            Modifier
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

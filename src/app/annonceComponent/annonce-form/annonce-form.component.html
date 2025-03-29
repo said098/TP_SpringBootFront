@@ -1,0 +1,69 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">Créer une annonce</h4>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="submit()" #annonceForm="ngForm">
+            <div class="mb-3">
+              <label for="title" class="form-label">Titre</label>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                class="form-control"
+                [(ngModel)]="annonce.title"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea
+                id="description"
+                name="description"
+                class="form-control"
+                [(ngModel)]="annonce.description"
+                required
+              ></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="adress" class="form-label">Adresse</label>
+              <input
+                type="text"
+                id="adress"
+                name="adress"
+                class="form-control"
+                [(ngModel)]="annonce.adress"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="mail" class="form-label">Email</label>
+              <input
+                type="email"
+                id="mail"
+                name="mail"
+                class="form-control"
+                [(ngModel)]="annonce.mail"
+                required
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-success w-100"
+              [disabled]="!annonceForm.form.valid"
+            >
+              Créer l’annonce
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
